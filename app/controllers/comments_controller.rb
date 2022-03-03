@@ -87,6 +87,7 @@ class CommentsController < ApplicationController
       redirect_to action: :index
       flash[:alert] = "The requested comment was not found!"
     end
+
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

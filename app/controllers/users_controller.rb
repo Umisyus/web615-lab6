@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
   def index
@@ -14,7 +14,13 @@ class UsersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    begin
+      @user = User.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to action: :index
+      flash[:alert] = "The requested user was not found!"
+    end
+
   end
 
   # Only allow a list of trusted parameters through.
