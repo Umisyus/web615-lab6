@@ -11,7 +11,7 @@
 #
 
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :protect_from_forgery, :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
@@ -27,13 +27,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    # begin
-    # @article = Article.find_by!(id: params[:id])
-    #
-    # rescue ActiveRecordError::RecordNotFound
-    #   redirect_to action: :index
-    #   return
-    # end
+
   end
 
   # GET /articles/new
