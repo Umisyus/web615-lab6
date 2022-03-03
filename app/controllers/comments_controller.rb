@@ -74,14 +74,24 @@ class CommentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def comment_params
-      params.require(:comment).permit(:message, :visible, :article_id)
-      # Students, make sure to add the user_id and article ID parameter as symbols here ^^^^^^
+  # Use callbacks to share common setup or constraints between actions.
+
+  def set_comment
+    begin
+
+      # Throws exception if not found
+      @comment = Comment.find(params[:id])
+
+    rescue ActiveRecord::RecordNotFound
+      redirect_to action: :index
+      flash[:alert] = "The requested comment was not found!"
     end
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def comment_params
+    params.require(:comment).permit(:message, :visible, :article_id)
+    # Students, make sure to add the user_id and article ID parameter as symbols here ^^^^^^
+  end
 end
