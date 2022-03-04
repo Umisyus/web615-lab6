@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <div class="panel panel-default">
@@ -20,20 +18,20 @@
         <% @users.each do |user| %>
           <tr>
             <td>  <%= user.email %> </td>
-            <td class="btn-light btn-primary text-white"><%= link_to 'Show', user %></td>
-            <td class="btn-light btn-warning text-white"><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td class="btn-light btn-danger text-white"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', user, class: "btn btn-primary" %></td>
+            <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-warning" %></td>
+            <td><%= link_to 'Destroy', user, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
-
         </tbody>
       </table>
 
-      <br>
       <div class="panel-footer">
 
         <%= link_to 'New User', new_user_registration_path, class: 'btn btn-success' %>
+        <%= page_entries_info @users %>
       </div>
+
     </div>
   </div>
 </div>

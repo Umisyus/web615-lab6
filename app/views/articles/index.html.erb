@@ -18,9 +18,9 @@
         <% @articles.each do |article| %>
           <tr>
             <td><%= article.title %></td>
-            <td class="btn btn-light btn-primary"><%= link_to 'Show', article %></td>
-            <td class="btn btn-light btn-warning"><%= link_to 'Edit', edit_article_path(article) %></td>
-            <td class="btn btn-light btn-danger"><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', article, class: "btn btn-primary" %></td>
+            <td><%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %></td>
+            <td><%= link_to 'Destroy', article, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
         </tbody>
