@@ -11,7 +11,7 @@
 #
 
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, :protect_from_forgery, :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    @article = Article.new
 
     respond_to do |format|
       if @article.save
