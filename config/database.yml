@@ -1,21 +1,21 @@
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: db
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  database:
 
 production:
   <<: *default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 10 } %>
-  database: bleater
-  username: bleater
+  database: web615-lab6
+  username: lab6
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
