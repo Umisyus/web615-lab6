@@ -1,5 +1,5 @@
 # This tells Docker which image to use, this is an offical ruby image from docker
-FROM ruby:2.6
+FROM ruby:2.6.6
 
 # Update the repo listins in the container
 RUN apt-get update

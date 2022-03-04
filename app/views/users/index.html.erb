@@ -20,9 +20,9 @@
         <% @users.each do |user| %>
           <tr>
             <td>  <%= user.email %> </td>
-            <td><%= link_to 'Show', user %></td>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="btn-light btn-primary text-white"><%= link_to 'Show', user %></td>
+            <td class="btn-light btn-warning text-white"><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td class="btn-light btn-danger text-white"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
 
