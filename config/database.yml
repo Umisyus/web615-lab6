@@ -5,7 +5,10 @@ default: &default
 
 development:
   <<: *default
-  database: db
+  database: lab6-dev
+  username: postgres
+  password:
+  host: db
 
 test:
   <<: *default
