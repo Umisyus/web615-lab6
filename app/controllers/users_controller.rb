@@ -10,6 +10,11 @@ class UsersController < ApplicationController
   def show
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

@@ -92,7 +92,7 @@ class CommentsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def comment_params
-    params.require(:comment).permit(:message, :visible, :article_id)
+    params.require(:comment).permit(:message, :visible, :article_id, user_id)
     # Students, make sure to add the user_id and article ID parameter as symbols here ^^^^^^
   end
 end
