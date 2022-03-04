@@ -48,6 +48,12 @@
         <tbody>
         <% @article.comments.order(created_at: :desc).each do |comment| %>
           <tr>
+            <% if comment.user_id == nil %>
+              <td>No user...</td>
+            <% else %>
+              <td>    <%= link_to comment.user.email, comment.user %></td>
+            <% end %>
+
             <td><%= comment.message %></td>
             <td><%= link_to 'Show', comment %></td>
           </tr>
