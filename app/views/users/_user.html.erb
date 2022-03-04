@@ -11,7 +11,11 @@
 
 <% if not user.articles.empty? %>
   <% user.articles.each do |article| %>
-    <%= link_to article.title, article %>
+    <ul>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    </ul>
   <% end %>
 
 <% else %>
@@ -24,7 +28,14 @@
 
 <% if not user.comments.empty? %>
   <% user.comments.each do |comment| %>
-    <%= link_to comment.article.title, comment.article.title %>
+    <ul>
+      <li>
+        <%=
+          comment.message
+        %>
+        on <%= link_to comment.article.title, comment.article %>
+      </li>
+    </ul>
   <% end %>
 
 <% else %>
