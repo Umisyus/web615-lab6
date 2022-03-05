@@ -35,6 +35,12 @@
     <div class="panel panel-info">
       <div class="panel-heading">
         <h1>Comments</h1>
+
+        <%= link_to 'Add Comment', new_comment_path %>
+
+        <%= render partial: "comments/form", locals: { comment: Comment.new, article: @article } %>
+
+
       </div>
 
       <table class="table table-hover">
