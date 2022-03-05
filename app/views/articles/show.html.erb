@@ -34,14 +34,21 @@
   <div class="col-md-10 col-md-offset-1">
     <div class="panel panel-info">
       <div class="panel-heading">
+
+        <!-- Concept for collapsing div from: https://www.w3schools.com/bootstrap/bootstrap_collapse.asp -->
+        <!-- A cool collapsing div with a form inside -->
+
         <h1>Comments</h1>
 
-        <%= link_to 'Add Comment', new_comment_path %>
-
-        <%= render partial: "comments/form", locals: { comment: Comment.new, article: @article } %>
-
-
+        <!-- "The Toggle Form" Button -->
+        <button class="btn btn-primary collapsible" data-toggle="collapse" data-target="#collapse">Add a Comment
+        </button>
+        <!--Makes the form to add a new comment-->
+        <div id="collapse" class="collapse">
+          <%= render partial: "comments/form", locals: { comment: Comment.new, article: @article } %>
+        </div>
       </div>
+
 
       <table class="table table-hover">
         <thead>
