@@ -9,6 +9,8 @@ development:
   username: postgres
   password:
   host: db
+# Increased timeout because of local deployment issues
+  timeout: 10000
 
 test:
   <<: *default

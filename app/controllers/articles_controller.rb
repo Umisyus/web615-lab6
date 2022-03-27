@@ -27,7 +27,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-
+    tracker do |t|
+      p "SENDING GOOGLE ANALYTICS"
+      t.google_analytics :send, { type: 'event', category: 'button', action: 'click', label: 'nav-buttons', value: 'X' }
+    end
   end
 
   # GET /articles/new
