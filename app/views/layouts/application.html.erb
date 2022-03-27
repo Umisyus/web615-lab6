@@ -17,7 +17,7 @@
       }
 
       gtag('js', new Date());
-      document.addEventListener("turbolinks:load", () => {
+      document.addEventListener("load", () => {
           gtag('config', 'G-PRD3M748J6', {
               page_location: event.data.url,
               page_path: event.srcElement.location.pathname,
