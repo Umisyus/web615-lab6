@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Legit News</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Legit News</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flash' %>
-  <div id="container" class="container">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PRD3M748J6"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
 
-    <%= yield %>
-  </div>
-  </body>
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'G-PRD3M748J6');
+  </script>
+</head>
+
+<body>
+<%= render 'shared/navbar' %>
+<%= render 'shared/flash' %>
+<div id="container" class="container">
+
+  <%= yield %>
+</div>
+</body>
 </html>
