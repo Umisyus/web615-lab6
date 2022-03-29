@@ -8,6 +8,8 @@ git_source(:github) do |repo_name|
 end
 gem 'rack-tracker'
 gem 'newrelic_rpm'
+gem "honeybadger", "~> 4.0"
+
 gem 'rails', '~> 5.1.4'
 gem 'faker'
 gem 'bootstrap-sass'
