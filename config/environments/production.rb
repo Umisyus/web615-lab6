@@ -96,5 +96,6 @@ Rails.application.configure do
   config.middleware.use(Rack::Tracker) do
     handler :google_analytics, { tracker: 'G-PRD3M748J6' }
   end
+  system("bundle exec honeybadger install hbp_hjd5qUch96IdXW55EnMxpb4cZDZdtu3L8pH2")
 
 end

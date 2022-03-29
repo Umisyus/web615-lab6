@@ -33,16 +33,16 @@ common: &default_settings
 # If your application has other named environments, configure them here.
 development:
   <<: *default_settings
-  app_name: Legit News (Development)
+  app_name: Legit News
 
 test:
   <<: *default_settings
   # It doesn't make sense to report to New Relic from automated test runs.
   monitor_mode: false
-
+  app_name: Legit News
 staging:
   <<: *default_settings
-  app_name: Legit News (Staging)
+  app_name: Legit News
 
 production:
   <<: *default_settings
